@@ -1,0 +1,8 @@
+@import '../../colors.scss';
+
+.text {
+  color: $text;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}

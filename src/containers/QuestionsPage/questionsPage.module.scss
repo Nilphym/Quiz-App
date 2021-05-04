@@ -1,0 +1,8 @@
+.wrapper {
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-rows: repeat(5, min-content);
+  align-content: space-evenly;
+  padding: 0 1em;
+}

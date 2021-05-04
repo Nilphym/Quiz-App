@@ -1,0 +1,14 @@
+@import '../../colors.scss';
+
+.button {
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background-color: $button;
+  text-decoration: none;
+  transition: transform .3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
