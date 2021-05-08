@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 @import 'colors';
+
 
 * {
   box-sizing: border-box;
@@ -8,5 +10,5 @@
 
 body {
   background-color: $background;
-  font-family: cursive;
+  font-family: 'Caveat', cursive;
 }

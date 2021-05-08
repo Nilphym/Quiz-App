@@ -5,6 +5,7 @@ import Text from '../../components/Text';
 import Button from '../../components/Button';
 import NextButton from '../../components/NextButton';
 import styles from './answersPage.module.scss';
+import ReactAudioPlayer from 'react-audio-player';
 
 // I am fully aware of duplicated code and that I could make AnswersPage and QuestionsPage as one component but I wanted to use routing and context api in order to learn them
 const AnswersPage = () => {
@@ -27,6 +28,12 @@ const AnswersPage = () => {
     <div className={styles.wrapper}>
       <Text tag="h2" fontSize="2.4rem" content={`Question ${questionNumber + 1}:`} />
       <Text tag="p" fontSize="1.5rem" content={currentQuestion.text} />
+      {(currentQuestion.type) === 'music' ?
+        <ReactAudioPlayer
+          src={require(`../../audio/${currentQuestion.source}`).default}
+          controls
+        /> : <></>
+      }
       {currentQuestion.answers.map((answer) => (
         <Button
           key={answer}
