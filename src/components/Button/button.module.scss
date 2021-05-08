@@ -10,10 +10,13 @@
   background-color: $button;
   text-decoration: none;
   transition: transform .3s;
-  cursor: pointer;
   font-family: inherit;
 
-  &:hover {
+  &:hover:not(.disabled) {
     transform: scale(1.2);
+  }
+
+  &:not(.disabled) {
+    cursor: pointer;
   }
 }

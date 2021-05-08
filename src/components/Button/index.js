@@ -12,11 +12,12 @@ const buttonTypes = {
 
 const Button = ({ onClick, content, fontSize, type, width }) => {
   const customStyles = { backgroundColor: buttonTypes[type], width };
+  const className = `${styles.button} ${onClick === undefined ? styles.disabled : ''}`;
 
   return (
     <button
       onClick={onClick}
-      className={styles.button}
+      className={className}
       style={customStyles}
     >
       <Text
@@ -31,7 +32,7 @@ const Button = ({ onClick, content, fontSize, type, width }) => {
 export default Button;
 
 Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   content: PropTypes.string.isRequired,
   fontSize: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['default', 'success', 'fail']),
@@ -39,5 +40,6 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  onClick: undefined,
   type: 'default'
 };

@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useContext, useEffect } from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import useQuestions from '../../hooks/useQuestions';
 import Text from '../../components/Text';
 import Button from '../../components/Button';
 import styles from './questionsPage.module.scss';
-import { shuffle } from '../../utils';
 import QuestionsContext from '../../context/questionsContext';
 
+// I am fully aware of duplicated code and that I could make AnswersPage and QuestionsPage as one component but I wanted to use routing and context api in order to learn them
 const QuestionsPage = () => {
   const context = useContext(QuestionsContext);
   const questions = useQuestions(3);
@@ -16,7 +16,7 @@ const QuestionsPage = () => {
 
   useEffect(() => {
     context.questions = questions;
-    context.answers = []
+    context.answers = [];
   }, []);
 
   const handleAnswer = (answer) => {
@@ -33,7 +33,7 @@ const QuestionsPage = () => {
     <div className={styles.wrapper}>
       <Text tag="h2" fontSize="2.4rem" content={`Question ${questionNumber + 1}:`} />
       <Text tag="p" fontSize="1.5rem" content={questions[questionNumber].text} />
-      {shuffle(questions[questionNumber].answers).map((answer) => (
+      {questions[questionNumber].answers.map((answer) => (
         <Button
           key={answer}
           onClick={() => handleAnswer(answer)}

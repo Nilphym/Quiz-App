@@ -34,8 +34,16 @@ const questions = [
   }
 ];
 
+const shuffleQuestions = (questions) => {
+  return shuffle(questions.map((question) => ({
+    text: question.text,
+    answers: shuffle(question.answers),
+    correct: question.correct
+  })));
+};
+
 const useQuestions = (maxQuestions) => {
-  const [chosenQuestions] = useState(shuffle(questions).slice(0, maxQuestions));
+  const [chosenQuestions] = useState(shuffleQuestions(questions).slice(0, maxQuestions));
   return chosenQuestions;
 };
 
