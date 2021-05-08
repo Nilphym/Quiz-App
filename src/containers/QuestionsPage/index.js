@@ -1,19 +1,27 @@
-import React, { useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useContext, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import useQuestions from '../../hooks/useQuestions';
 import Text from '../../components/Text';
 import Button from '../../components/Button';
 import styles from './questionsPage.module.scss';
 import { shuffle } from '../../utils';
+import QuestionsContext from '../../context/questionsContext';
 
 const QuestionsPage = () => {
+  const context = useContext(QuestionsContext);
   const questions = useQuestions(3);
   const history = useHistory();
   const [questionNumber, setQuestionNumber] = useState(0);
-  const [, setUserAnswers] = useState({});
+
+  useEffect(() => {
+    context.questions = questions;
+    context.answers = []
+  }, []);
 
   const handleAnswer = (answer) => {
-    setUserAnswers({questionNumber: answer});
+    context.answers = [...context.answers, answer];
+
     if (questionNumber >= questions.length - 1) {
       history.push('/answers');
     } else {
