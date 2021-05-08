@@ -1,6 +1,7 @@
 # Quiz App
-Quiz game made in React with React-Router, Storybook, Context API and SASS. Quiz was designed in Adobe XD only for mobile devices.
-[View Demo](https://nilphym.github.io/Quiz-App)
+Quiz game made in React with React-Router, Storybook, Context API and SASS. Quiz was designed in Adobe XD only for mobile devices.  
+[View Demo](https://nilphym.github.io/Quiz-App)  
+[Download Adobe XD Project](readme/QuizApp.xd)
 
 
 ## Table of content
@@ -11,7 +12,7 @@ Quiz game made in React with React-Router, Storybook, Context API and SASS. Quiz
 
 
 ## Screenshots
-![Business Card Screen Shot](screenshots/design.png)
+![Business Card Screen Shot](readme/design.png)
 
 
 ## Technologies
