@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import MainPage from './containers/MainPage';
-import QuestionsPage from './containers/QuestionsPage'
+import QuestionsPage from './containers/QuestionsPage';
+import AnswersPage from './containers/AnswersPage';
 import styles from './App.module.scss';
 
 const App = () => {
@@ -13,6 +14,9 @@ const App = () => {
         </Route>
         <Route path="/questions">
           <QuestionsPage />
+        </Route>
+        <Route path="/answers">
+          <AnswersPage />
         </Route>
       </Switch>
     </div>

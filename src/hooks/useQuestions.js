@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { shuffle } from '../utils';
 
 const questions = [
   {
@@ -33,20 +34,8 @@ const questions = [
   }
 ];
 
-const shuffle = (array) => {
-  for(let i = array.length - 1; i > 0; i--){
-    const j = Math.floor(Math.random() * i)
-    const temp = array[i]
-    array[i] = array[j]
-    array[j] = temp
-  }
-  return array;
-};
-
-const useQuestions = () => {
-  const maxQuestions = 3;
-  // eslint-disable-next-line no-unused-vars
-  const [chosenQuestions, setChosenQuestions] = useState(shuffle(questions).slice(0, maxQuestions));
+const useQuestions = (maxQuestions) => {
+  const [chosenQuestions] = useState(shuffle(questions).slice(0, maxQuestions));
   return chosenQuestions;
 };
 
